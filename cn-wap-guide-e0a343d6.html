@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询与对照 — bet365 使用笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fafafa;
+            color: #1e1e1e;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.65;
+            padding: 2rem 1rem 4rem;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            margin: 3rem 0 2.5rem 0;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            color: #111;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #444;
+            max-width: 580px;
+        }
+
+        /* 通用section */
+        section {
+            margin-bottom: 2.8rem;
+        }
+        section h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #e0e0e0;
+            color: #1c1c1c;
+        }
+        section h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #2b2b2b;
+        }
+        section p {
+            margin-bottom: 1rem;
+            color: #3a3a3a;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 0.4rem 0 0.4rem 1.4rem;
+            position: relative;
+            color: #3a3a3a;
+        }
+        ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #9a9a9a;
+        }
+
+        /* 卡片风格的优势区 */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.8rem 0 0.5rem;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 14px;
+            padding: 1.4rem 1.2rem;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+        .card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #1e1e1e;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin: 0;
+        }
+
+        /* faq摘要 */
+        .faq-block {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+        }
+        .faq-block details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 0.6rem;
+        }
+        .faq-block details:last-of-type {
+            border-bottom: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-block summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #2b2b2b;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+        }
+        .faq-block summary::-webkit-details-marker {
+            color: #999;
+        }
+        .faq-block details p {
+            margin: 0.6rem 0 0.2rem;
+            padding-left: 0.2rem;
+            color: #4e4e4e;
+            font-size: 0.95rem;
+        }
+
+        /* 底部链接 */
+        .footer-note {
+            border-top: 1px solid #ddd;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #5a5a5a;
+        }
+        .footer-note a {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #bbb;
+            transition: text-decoration-color 0.2s;
+        }
+        .footer-note a:hover {
+            text-decoration-color: #1e1e1e;
+        }
+
+        /* 内嵌链接 */
+        .inline-link {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #ccc;
+            transition: text-decoration-color 0.2s;
+        }
+        .inline-link:hover {
+            text-decoration-color: #1e1e1e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 550px) {
+            body {
+                padding: 1.2rem 0.8rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .faq-block {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- hero -->
+        <div class="hero">
+            <h1>查一查，比一比，日常记录</h1>
+            <p>围绕 <a href="https://cn-wap-bet365.com" class="inline-link">bet365</a> 做一些简单的功能对照、界面梳理和常见问题整理，方便自己偶尔翻阅。</p>
+        </div>
+
+        <!-- 优势区：卡片方式 -->
+        <section>
+            <h2>几个自己常留意的点</h2>
+            <div class="cards">
+                <div class="card">
+                    <h4>板块与分类</h4>
+                    <p>赛事、联赛、锦标赛，以及即时更新条目，结构比想象中清晰。</p>
+                </div>
+                <div class="card">
+                    <h4>筛选与排序</h4>
+                    <p>按时间、热度、关注度过滤，每次对比时节省不少翻页时间。</p>
+                </div>
+                <div class="card">
+                    <h4>界面切换习惯</h4>
+                    <p>深色与浅色显示各有所用，晚上用深色模式眼睛更舒服。</p>
+                </div>
+                <div class="card">
+                    <h4>延伸阅读入口</h4>
+                    <p>部分项目附带辅助说明或统计摘要，适合赛前简单参考。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 说明区：从日常查询角度 -->
+        <section>
+            <h2>日常查询与对照场景</h2>
+            <p>平时遇到不熟悉的赛事或队伍，习惯同时打开两个页面做快速对比。把 <a href="https://cn-wap-bet365.com" class="inline-link">bet365</a> 放在一侧，另一侧放数据网站或新闻摘要，边看边核对。有时只是确认一下具体时间或轮次，避免记混。</p>
+            <p>对于联赛密集的周末，用列表浏览比卡片浏览更有效率，一次可以扫过十几场。偶尔也会用筛选只看「已开始」或「即将开始」，减少干扰。</p>
+            <h3>延伸阅读的用法</h3>
+            <p>某些体育项目附带简要的赛果走势或近期交锋记录，适合赛前花一两分钟扫一眼。不需要太深入，但能提供基本对照。</p>
+        </section>
+
+        <!-- FAQ摘要 -->
+        <div class="faq-block">
+            <h2 style="border-bottom: 0; font-size: 1.2rem; margin-bottom: 1rem;">常见小问题 · 摘要</h2>
+            <details>
+                <summary>如何快速找到特定联赛？</summary>
+                <p>使用页面顶部的搜索框，或按运动类别逐层展开。也可以把常用联赛加入「我的关注」。</p>
+            </details>
+            <details>
+                <summary>页面语言可以切换吗？</summary>
+                <p>一般会跟随系统语言设置，也支持手动切换。在底部或设置区域能找到语言选项。</p>
+            </details>
+            <details>
+                <summary>为什么有时数据更新慢几秒？</summary>
+                <p>实时数据受网络和源站刷新影响，偶尔会有短暂延迟。可尝试刷新或检查网络连接。</p>
+            </details>
+            <details>
+                <summary>移动端和桌面端区别大吗？</summary>
+                <p>移动端布局更紧凑，核心功能一致。部分筛选和排序在桌面端操作更顺手。</p>
+            </details>
+        </div>
+
+        <!-- 底部链接 自然句子 -->
+        <div class="footer-note">
+            <p>平时用手机或电脑打开 <a href="https://cn-wap-bet365.com">bet365</a> 的次数不少，逐渐整理出这一套自己的查阅习惯。以上内容仅为个人使用记录，不构成任何建议或引导。</p>
+            <p style="margin-top: 0.8rem; color: #888; font-size: 0.85rem;">页面仅供日常参照使用 · 无诱导或承诺</p>
+        </div>
+
+    </div>
+</body>
+</html>
